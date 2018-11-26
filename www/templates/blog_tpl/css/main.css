@@ -1,0 +1,59 @@
+/*
+#FD610F - оранжевый
+#272b30 - серый (подвал)
+#ccc - сервый при наведении на ссылку меню
+#e2c3a4 - бежевый
+*/
+
+html {position: relative; min-height: 100%;}
+body {font-size: 14px; font-family: Arial,Helvetica, sans-serif; background-color: #272b30; margin-bottom: 128px;}
+.btn-orange {background-color: #FD610F; border-color: #FD610F;}
+a.btn-orange {color: #fff;}
+.btn-orange:hover {background-color: #f15d0e; border-color: #f15d0e;}
+.btn-orange:not(:disabled):not(.disabled).active, 
+.btn-orange:not(:disabled):not(.disabled):active, 
+.show>.btn-orange.dropdown-toggle {background-color: #f15d0e; border-color: #f15d0e;}
+
+
+#background {position: fixed; z-index: 0; top: 0px; height: 100%; width: 100%; 
+	background: transparent url('../img/bg.jpg') center center repeat-y; background-size: cover; opacity: 0.5;}
+#content {position: relative; z-index: 10; width: 100%; height: 100%;}
+
+#header .panel-menu {background-color: #272b30;}
+#header .panel-menu .main-menu {text-align: center;}
+
+#footer {position: absolute; bottom: 0px; width: 100%; box-sizing: border-box; height: 128px; background-color: #272b30; color: #fff; padding-bottom: 25px;}
+#footer .top .main-menu {text-align: center;}
+
+.main-menu {margin-bottom: 0px; text-transform: uppercase; padding: 20px 0px;}
+.main-menu li {display: inline-block; padding: 0px 10px;}
+.main-menu li > a {color: #fff; text-decoration: none; transition: color 0.4s;}
+.main-menu li > a:hover {color: #ccc; text-decoration: none; transition: color 0.4s;}
+.main-menu span.active {color: #FD610F;}
+
+#page .page-content {padding: 25px 0px;}
+#page .page-content .container {background-color: #fff; padding: 20px 30px;}
+
+#page .page-head {margin-top: 25px; font-size: 25px;}
+#page .page-head .page-title {color: #fff;}
+
+.blog-tags {margin-bottom: 20px;}
+.blog-tags .badge {margin-right: 5px; font-size: 13px; padding: 5px 8px;}
+
+.blog-list {}
+.blog-list .card-img {width: 450px; height: 300px;}
+.blog-list .card-body .tags {margin-bottom: 10px;}
+.blog-list .card-body .tags .badge {margin-right: 5px; font-size: 13px; padding: 5px 8px;}
+
+.blog-detail {}
+.blog-detail .card-body {padding: 20px 35px;}
+.blog-detail .card-body img {width: 100%; height: auto; margin: 15px 0px;}
+
+.blog-other a {color: #000;}
+.blog-other .title {margin-bottom: 20px;}
+
+#footer .block-contacts ul {font-size: 16px;}
+#footer .block-contacts ul a {color: #fff; text-decoration: none; transition: color 0.4s;}
+#footer .block-contacts ul a:hover  {color: #ccc; text-decoration: none; transition: color 0.4s;}
+#footer .block-owner-info {}
+#footer .block-owner-info > span {display: block;}

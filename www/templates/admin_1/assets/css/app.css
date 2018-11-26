@@ -1,0 +1,6 @@
+.auth-box {padding: 30px 30px; width: 450px; height: auto; box-sizing: border-box;}
+.auth-box .lead {font-size: 21px; font-weight: bold; text-transform: uppercase;}
+
+@media screen and (max-width: 767px) {
+	.auth-box {padding: 20px 20px; width: 300px;}
+}
