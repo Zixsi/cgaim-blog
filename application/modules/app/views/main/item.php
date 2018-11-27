@@ -8,7 +8,7 @@
 	<div class="card flex-md-row mb-4">
 		<div class="card-body">
 			<div class="mb-1 text-muted"><?=get_format_date($item['ts'])?></div>
-			<h3 class="mb-2"><?=htmlspecialchars_decode($item['name'])?></h3>
+			<h3 class="mb-2 item-title"><?=htmlspecialchars_decode($item['name'])?></h3>
 			<?if(!empty($item['short_description'])):?>
 				<p class="card-text mb-auto"><?=htmlspecialchars_decode($item['short_description'])?></p>
 			<?endif;?>

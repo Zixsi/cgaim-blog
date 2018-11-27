@@ -20,11 +20,11 @@
 							<span class="badge badge-primary">World</span><span class="badge badge-primary">Animation</span>
 						</div>
 						<div class="mb-0 text-muted"><?=get_format_date($item['ts'])?></div>
-						<h3 class="mb-1">
+						<h3 class="mb-1 item-title">
 							<a class="text-dark" href="/item/<?=$item['id']?>/"><?=htmlspecialchars_decode($item['name'])?></a>
 						</h3>
 						<p class="card-text mb-auto"><?=htmlspecialchars_decode($item['short_description'])?></p>
-						<a href="/item/<?=$item['id']?>/" class="btn btn-primary">Continue reading</a>
+						<a href="/item/<?=$item['id']?>/" class="btn btn-primary">Читать</a>
 					</div>
 				</div>
 			<?endforeach;?>

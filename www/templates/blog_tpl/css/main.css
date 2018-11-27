@@ -41,16 +41,19 @@ a.btn-orange {color: #fff;}
 .blog-tags .badge {margin-right: 5px; font-size: 13px; padding: 5px 8px;}
 
 .blog-list {}
+.blog-list .item-title {text-transform: uppercase;}
 .blog-list .card-img {width: 450px; height: 300px;}
 .blog-list .card-body .tags {margin-bottom: 10px;}
 .blog-list .card-body .tags .badge {margin-right: 5px; font-size: 13px; padding: 5px 8px;}
 
 .blog-detail {}
+.blog-detail .item-title {text-transform: uppercase;}
 .blog-detail .card-body {padding: 20px 35px;}
 .blog-detail .card-body img {width: 100%; height: auto; margin: 15px 0px;}
 
 .blog-other a {color: #000;}
 .blog-other .title {margin-bottom: 20px;}
+.blog-other .card-title {text-transform: uppercase;}
 
 #footer .block-contacts ul {font-size: 16px;}
 #footer .block-contacts ul a {color: #fff; text-decoration: none; transition: color 0.4s;}

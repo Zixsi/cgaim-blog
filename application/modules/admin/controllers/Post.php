@@ -18,7 +18,7 @@ class Post extends APP_Controller
 
 		if(cr_valid_key())
 		{
-			$form_data = $this->input->post(null, true);
+			$form_data = $this->input->post(null, false);
 			if($this->PostModel->add($form_data))
 			{
 				header('Location: ../');
@@ -41,7 +41,7 @@ class Post extends APP_Controller
 
 		if(cr_valid_key())
 		{
-			$form_data = $this->input->post(null, true);
+			$form_data = $this->input->post(null, false);
 			if($this->PostModel->update($id, $form_data))
 			{
 				header('Location: ./');
