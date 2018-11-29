@@ -49,6 +49,9 @@
 					<ul class="nav">
 						<li><a href="/admin/post/" class="active"><i class="lnr lnr-home"></i> <span>Посты</span></a></li>
 					</ul>
+					<ul class="nav">
+						<li><a href="/admin/tags/"><i class="lnr lnr-map"></i> <span>Теги</span></a></li>
+					</ul>
 				</nav>
 			</div>
 		</div>

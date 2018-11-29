@@ -11,4 +11,5 @@ $route['admin'] = 'admin/main';
 $route['admin/ajax/upload-file'] = 'admin/ajax/uploadFile';
 $route['admin/(.*)'] = 'admin/$1';
 
+$route['app/ajax-blog-list'] = 'app/main/ajaxBlogList';
 $route['item/(:num)'] = 'app/main/item/$1';

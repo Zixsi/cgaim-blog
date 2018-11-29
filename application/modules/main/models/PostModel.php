@@ -4,7 +4,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 class PostModel extends APP_Model
 {
 	private const TABLE = 'posts';
-	private const TABLE_FIELDS = ['name', 'short_description', 'description', 'img', 'ts', 'active'];
+	private const TABLE_FIELDS = ['name', 'short_description', 'description', 'img', 'ts', 'active', 'tags'];
 	private $upload_config = null;
 
 	public function __construct()
@@ -21,6 +21,7 @@ class PostModel extends APP_Model
 			{
 				$data['img'] = $img;
 			}
+			$data['tags'] = implode(',', ($data['tags'] ?? []));
 
 			if($this->db->insert(self::TABLE, $data))
 			{
@@ -45,12 +46,27 @@ class PostModel extends APP_Model
 			{
 				$data['img'] = $img;
 			}
+			$data['tags'] = implode(',', ($data['tags'] ?? []));
 
 			$this->db->where('id', $id);
 			if($this->db->update(self::TABLE, $data))
 			{
 				return true;
 			}
+		}
+		catch(Exception $e)
+		{
+			$this->LAST_ERROR = $e->getMessage();
+		}
+
+		return false;
+	}
+
+	public function setCounter($id)
+	{
+		try
+		{
+			return $this->db->simple_query('UPDATE '.self::TABLE.' SET counter = counter + 1 WHERE id = '.intval($id));
 		}
 		catch(Exception $e)
 		{
@@ -71,6 +87,7 @@ class PostModel extends APP_Model
 		$sql = 'SELECT * FROM '.self::TABLE.' WHERE id = ?';
 		if($row = $this->db->query($sql, $bind)->row_array())
 		{
+			$row['tags'] = explode(',', ($row['tags'] ?? ''));
 			return $row;
 		}
 
@@ -82,17 +99,25 @@ class PostModel extends APP_Model
 		$filter['limit'] = abs(intval($filter['limit'] ?? 10));
 		$filter['offset'] = abs(intval($filter['offset'] ?? 0));
 
+		$bind = [];
 		$where_sql = '';
+
 		if(isset($filter['active']))
 		{
 			$where_sql .= ' AND active = '.intval($filter['active']);
+		}
+
+		if(isset($filter['tag']) && strlen($filter['tag']) >= 3)
+		{
+			$bind[] = $filter['tag'];
+			$where_sql .= ' AND FIND_IN_SET(?, tags) ';
 		}
 
 		if($cnt)
 		{
 			$sql_cnt  = 'SELECT count(*) as count FROM '.self::TABLE.' WHERE id IS NOT NULL '.$where_sql;
 
-			if($row = $this->db->query($sql_cnt, [])->row_array())
+			if($row = $this->db->query($sql_cnt, $bind)->row_array())
 			{
 				return intval($row['count']);
 			}
@@ -101,12 +126,16 @@ class PostModel extends APP_Model
 		}
 		else
 		{
-			$bind = [];
 			$sql = 'SELECT * FROM '.self::TABLE.' WHERE id IS NOT NULL '.$where_sql.' ORDER BY id DESC ';
 			$sql .= ' LIMIT '.$filter['limit'].' OFFSET '.$filter['offset'];
 
 			if($rows = $this->db->query($sql, $bind)->result_array())
 			{
+				foreach($rows as &$val)
+				{
+					$val['tags'] = explode(',', ($val['tags'] ?? ''));
+				}
+				
 				return $rows;
 			}
 		}
@@ -121,6 +150,11 @@ class PostModel extends APP_Model
 		$sql .= ' LIMIT 3';
 		if($rows = $this->db->query($sql, [])->result_array())
 		{
+			foreach($rows as &$val)
+			{
+				$val['tags'] = explode(',', ($val['tags'] ?? ''));
+			}
+
 			return $rows;
 		}
 

@@ -1,12 +1,22 @@
 <div class="blog-tags">
 	<a href="/" class="badge badge-secondary">Все посты</a>
-	<a href="#" class="badge badge-primary">World</a>
-	<a href="#" class="badge badge-primary">Animation</a>
+	<?if($tags):?>
+		<?foreach($tags as $val):?>
+			<a href="/?tag=<?=$val['name']?>" class="badge badge-primary"><?=$val['name']?></a>
+		<?endforeach;?>
+	<?endif;?>
 </div>
 
 <div class="blog-detail">
 	<div class="card flex-md-row mb-4">
 		<div class="card-body">
+			<?if(($item['tags'] ?? false) && is_array($item['tags'])):?>
+				<div class="tags">
+					<?foreach($item['tags'] as $val):?>
+						<a href="/?tag=<?=$val?>" class="badge badge-primary"><?=$val?></a>
+					<?endforeach;?>
+				</div>
+			<?endif;?>
 			<div class="mb-1 text-muted"><?=get_format_date($item['ts'])?></div>
 			<h3 class="mb-2 item-title"><?=htmlspecialchars_decode($item['name'])?></h3>
 			<?if(!empty($item['short_description'])):?>

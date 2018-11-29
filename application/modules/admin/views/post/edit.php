@@ -21,9 +21,19 @@
 					</label>
 				</div>
 				<div class="form-group">
-					<label for="fperiod">Название</label>
+					<label for="fname">Название</label>
 					<input type="text" name="name" id="fname" class="form-control" placeholder="Название" value="<?=htmlspecialchars_decode(set_value('name', $item['name'], true))?>">
 				</div>
+				<?if($tags):?>
+					<div class="form-group">
+						<label for="ftags">Теги</label>
+						<select name="tags[]" id="ftags" class="form-control" multiple="true">
+							<?foreach($tags as $val):?>
+								<option value="<?=$val['name']?>" <?=(in_array($val['name'], $item['tags']) || in_array($val['name'], ($form_data['tags'] ?? [])))?'selected="true"':''?>><?=$val['name']?></option>
+							<?endforeach;?>
+						</select>
+					</div>
+				<?endif;?>
 				<div class="form-group">
 					<label>Изображение</label>
 					<input type="file" name="img">

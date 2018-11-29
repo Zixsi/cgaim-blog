@@ -27,3 +27,11 @@ $config['post_item'] = [
 		'rules' => 'required'
 	],
 ];
+
+$config['tag_item'] = [
+	[
+		'field' => 'name',
+		'label' => 'Название',
+		'rules' => 'trim|required|min_length[3]|max_length[50]|is_unique[tags.name]'
+	]
+];

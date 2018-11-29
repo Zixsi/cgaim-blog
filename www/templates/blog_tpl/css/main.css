@@ -42,7 +42,7 @@ a.btn-orange {color: #fff;}
 
 .blog-list {}
 .blog-list .item-title {text-transform: uppercase;}
-.blog-list .card-img {width: 450px; height: 300px;}
+.blog-list .card-img {width: 450px !important; height: 300px;}
 .blog-list .card-body .tags {margin-bottom: 10px;}
 .blog-list .card-body .tags .badge {margin-right: 5px; font-size: 13px; padding: 5px 8px;}
 

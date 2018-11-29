@@ -76,5 +76,8 @@
 			</div>
 		</div>
 	</div>
+	
+	<script type="text/javascript" src="<?=TEMPLATE_DIR?>/blog_tpl/js/jquery.min.js"></script>
+	<script type="text/javascript" src="<?=TEMPLATE_DIR?>/blog_tpl/js/app.js?v=<?=VERSION?>"></script>
 </body>
 </html>

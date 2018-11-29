@@ -6,25 +6,68 @@ class Main extends APP_Controller
 	public function __construct()
 	{
 		parent::__construct();
-		$this->load->model(['main/PostModel']);
+		$this->load->model(['main/PostModel', 'main/TagsModel']);
 	}
 
 	public function index()
 	{
 		$data = [];
+		$data['tag'] = $_GET['tag'] ?? '';
 
-		$filter = ['active' => 1, 'limit' => 3];
+		$filter = [
+			'active' => 1, 
+			'limit' => 3, 
+			'tag' => $data['tag']
+		];
+
+		$data['tags'] = $this->TagsModel->list();
 		$data['items'] = $this->PostModel->list($filter);
+		$data['items_count'] = $this->PostModel->list($filter, true);
+		$data['items_limit'] = $filter['limit'];
+		$data['show_more_button'] = $data['items_count'] > $filter['limit'];
 
 		$this->load->lview('main/index', $data);
+	}
+
+	public function ajaxBlogList()
+	{
+		$this->load->library(['main/PostModelHelper']);
+		$data = [];
+
+		$filter = [
+			'active' => 1, 
+			'limit' => ($_POST['limit'] ?? 5), 
+			'offset' => ($_POST['offset'] ?? 0), 
+			'tag' => ($_POST['tag'] ?? '')
+		];
+		if(($data['items'] = $this->PostModel->list($filter)) !== false)
+		{
+			$data['items'] = $this->PostModelHelper->listAjaxPrepare($data['items']);
+		}
+		
+		header('Pragma: no-cache');
+		header('Cache-Control: no-store, no-cache, must-revalidate');
+		header('Content-type: application/json');
+
+		echo json_encode($data);
 	}
 
 	public function item($id)
 	{
 		$data = [];
-		$data['item'] = $this->PostModel->getByID($id);
+		
+		if(($data['item'] = $this->PostModel->getByID($id)) === false)
+		{
+			header('Location: /');
+		}
+
+		$this->load->library(['main/PostModelHelper']);
+		$this->PostModelHelper->counter($id);
+		$data['tags'] = $this->TagsModel->list();
 		$data['other_items'] = $this->PostModel->listOther(true);
 
 		$this->load->lview('main/item', $data);
 	}
+
+
 }

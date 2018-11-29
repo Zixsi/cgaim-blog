@@ -50,7 +50,8 @@ class SystemHook
 			}
 
 			$this->CI->load->model([
-				'main/PostModel'
+				'main/PostModel', 
+				'main/TagsModel'
 			]);
 		}
 	}
