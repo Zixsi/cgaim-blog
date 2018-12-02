@@ -1,7 +1,9 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title>Title</title>
+	<title><?=($page_title = ($page_title ?? ''))?$page_title.' - ':''?>Cgaim Блог</title>
+	<link href="https://fonts.googleapis.com/css?family=Roboto:400,400i,700,700i&amp;subset=cyrillic" rel="stylesheet">
+	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" crossorigin="anonymous">
 	<link rel="stylesheet" type="text/css" href="<?=TEMPLATE_DIR?>/blog_tpl/css/bootstrap.min.css">
 	<link rel="stylesheet" type="text/css" href="<?=TEMPLATE_DIR?>/blog_tpl/css/main.css?v=<?=VERSION?>">
 </head>
@@ -23,15 +25,55 @@
 			</div>
 		</div>
 		<div id="page">
-			<div class="page-head">
-				<div class="container">
-					<h1 class="page-title text-center">Блог</h1>
-				</div>
-			</div>
-
 			<div class="page-content">
 				<div class="container">
-					<?$this->content()?>
+
+					<?/*<div class="nav-scroller py-1 mb-2">
+						<nav class="nav d-flex justify-content-center">
+							<?if($tags):?>
+								<?foreach($tags as $val):?>
+									<a href="/?tag=<?=$val['name']?>" class="p-2 text-muted"><?=$val['name']?></a>
+								<?endforeach;?>
+							<?endif;?>
+						</nav>
+					</div>*/?>
+					
+					<div class="row">
+						<div class="col-md-8">
+							<?$this->content()?>
+						</div>
+						<div class="col-md-4">
+							<div class="card mb-4">
+								<div class="card-body">
+									<form action="./" method="get">
+										<div class="input-group">
+											<input type="text" class="form-control" name="q" placeholder="Поиск..." value="<?=($_GET['q'] ?? '')?>">
+											<div class="input-group-append">
+												<button class="btn btn-outline-secondary" type="submit">
+													<i class="fas fa-search"></i>
+												</button>
+											</div>
+										</div>
+									</form>
+								</div>
+							</div>
+
+							<div class="card mb-4">
+								<div class="card-body">
+									<h6 class="card-subtitle mb-2 text-muted">Теги</h6>
+									<div class="tags-list">
+										<a href="/" class="text-dark">Все публикации</a>
+										<?if($tags):?>
+											<?foreach($tags as $val):?>
+												<a href="/?tag=<?=$val['name']?>" class="text-dark"><?=$val['name']?></a>
+											<?endforeach;?>
+										<?endif;?>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+
 				</div>
 			</div>
 		</div>
@@ -76,7 +118,6 @@
 			</div>
 		</div>
 	</div>
-	
 	<script type="text/javascript" src="<?=TEMPLATE_DIR?>/blog_tpl/js/jquery.min.js"></script>
 	<script type="text/javascript" src="<?=TEMPLATE_DIR?>/blog_tpl/js/app.js?v=<?=VERSION?>"></script>
 </body>

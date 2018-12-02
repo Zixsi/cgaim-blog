@@ -12,19 +12,18 @@ class Main extends APP_Controller
 	public function index()
 	{
 		$data = [];
-		$data['tag'] = $_GET['tag'] ?? '';
 
-		$filter = [
+		$data['filter'] = [
 			'active' => 1, 
 			'limit' => 3, 
-			'tag' => $data['tag']
+			'tag' => ($_GET['tag'] ?? ''),
+			'search' => ($_GET['q'] ?? '') 
 		];
 
 		$data['tags'] = $this->TagsModel->list();
-		$data['items'] = $this->PostModel->list($filter);
-		$data['items_count'] = $this->PostModel->list($filter, true);
-		$data['items_limit'] = $filter['limit'];
-		$data['show_more_button'] = $data['items_count'] > $filter['limit'];
+		$data['items'] = $this->PostModel->list($data['filter']);
+		$data['items_count'] = $this->PostModel->list($data['filter'], true);
+		$data['show_more_button'] = $data['items_count'] > $data['filter']['limit'];
 
 		$this->load->lview('main/index', $data);
 	}
@@ -38,7 +37,8 @@ class Main extends APP_Controller
 			'active' => 1, 
 			'limit' => ($_POST['limit'] ?? 5), 
 			'offset' => ($_POST['offset'] ?? 0), 
-			'tag' => ($_POST['tag'] ?? '')
+			'tag' => ($_POST['tag'] ?? ''),
+			'search' => ($_POST['search'] ?? '')
 		];
 		if(($data['items'] = $this->PostModel->list($filter)) !== false)
 		{
@@ -63,6 +63,7 @@ class Main extends APP_Controller
 
 		$this->load->library(['main/PostModelHelper']);
 		$this->PostModelHelper->counter($id);
+		$data['page_title'] = $data['item']['name'];
 		$data['tags'] = $this->TagsModel->list();
 		$data['other_items'] = $this->PostModel->listOther(true);
 

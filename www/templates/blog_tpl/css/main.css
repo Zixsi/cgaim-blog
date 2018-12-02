@@ -6,7 +6,7 @@
 */
 
 html {position: relative; min-height: 100%;}
-body {font-size: 14px; font-family: Arial,Helvetica, sans-serif; background-color: #272b30; margin-bottom: 128px;}
+body {font-size: 14px; font-family: 'Roboto',Tahoma; background-color: #f0f0f0; margin-bottom: 128px;}
 .btn-orange {background-color: #FD610F; border-color: #FD610F;}
 a.btn-orange {color: #fff;}
 .btn-orange:hover {background-color: #f15d0e; border-color: #f15d0e;}
@@ -15,8 +15,8 @@ a.btn-orange {color: #fff;}
 .show>.btn-orange.dropdown-toggle {background-color: #f15d0e; border-color: #f15d0e;}
 
 
-#background {position: fixed; z-index: 0; top: 0px; height: 100%; width: 100%; 
-	background: transparent url('../img/bg.jpg') center center repeat-y; background-size: cover; opacity: 0.5;}
+#background {position: fixed; z-index: 0; top: 0px; height: 100%; width: 100%;
+	/*background: transparent url('../img/bg.jpg') center center repeat-y; background-size: cover; opacity: 0.5;*/}
 #content {position: relative; z-index: 10; width: 100%; height: 100%;}
 
 #header .panel-menu {background-color: #272b30;}
@@ -32,7 +32,7 @@ a.btn-orange {color: #fff;}
 .main-menu span.active {color: #FD610F;}
 
 #page .page-content {padding: 25px 0px;}
-#page .page-content .container {background-color: #fff; padding: 20px 30px;}
+#page .page-content .container {/*background-color: #fff; padding: 20px 30px;*/}
 
 #page .page-head {margin-top: 25px; font-size: 25px;}
 #page .page-head .page-title {color: #fff;}
@@ -41,19 +41,27 @@ a.btn-orange {color: #fff;}
 .blog-tags .badge {margin-right: 5px; font-size: 13px; padding: 5px 8px;}
 
 .blog-list {}
-.blog-list .item-title {text-transform: uppercase;}
-.blog-list .card-img {width: 450px !important; height: 300px;}
-.blog-list .card-body .tags {margin-bottom: 10px;}
-.blog-list .card-body .tags .badge {margin-right: 5px; font-size: 13px; padding: 5px 8px;}
+.blog-list .card-body .top-panel {margin-bottom: 10px;}
+.blog-list .card-body .item-title {font-size: 22px; font-weight: bold;}
+.blog-list .card-body .card-text {font-size: 16px;}
+.blog-list .card-body .tag {font-weight: normal; display: inline-block; border: 1px solid #343a40; border-radius: 10px; padding: 2px 8px; font-size: 13px;}
+.blog-list .card-body .date {margin-left: 10px;}
+#blog-list-more {background-color: transparent; border-color: #343a40;}
 
 .blog-detail {}
-.blog-detail .item-title {text-transform: uppercase;}
+.blog-detail .item-title {font-size: 22px; font-weight: bold;}
+.blog-detail .card-body .top-panel {margin-bottom: 10px;}
+.blog-detail .card-body .tag {font-weight: normal; display: inline-block; border: 1px solid #343a40; border-radius: 10px; padding: 2px 8px; font-size: 13px;}
 .blog-detail .card-body {padding: 20px 35px;}
 .blog-detail .card-body img {width: 100%; height: auto; margin: 15px 0px;}
 
 .blog-other a {color: #000;}
 .blog-other .title {margin-bottom: 20px;}
-.blog-other .card-title {text-transform: uppercase;}
+.blog-other .card-title {font-size: 18px;}
+
+.tags-list {}
+.tags-list a {font-weight: normal; display: inline-block; border: 1px solid #343a40; border-radius: 10px; padding: 2px 8px; 
+	font-size: 13px; margin-right: 10px; margin-bottom: 5px;}
 
 #footer .block-contacts ul {font-size: 16px;}
 #footer .block-contacts ul a {color: #fff; text-decoration: none; transition: color 0.4s;}

@@ -1,62 +1,64 @@
-<div class="blog-tags">
-	<a href="/" class="badge badge-secondary">Все посты</a>
-	<?if($tags):?>
-		<?foreach($tags as $val):?>
-			<a href="/?tag=<?=$val['name']?>" class="badge badge-primary"><?=$val['name']?></a>
+<div class="blog-list">
+	<?if($items):?>
+		<?foreach($items as $item):?>
+			<div class="card mb-4">
+				<div class="card-body">
+					<div class="row top-panel">
+						<div class="col-8">
+							<?if(($item['tags'] ?? false) && is_array($item['tags'])):?>
+								<?foreach($item['tags'] as $val):?>
+									<a href="/?tag=<?=$val?>" class="text-dark tag"><?=$val?></a>
+								<?endforeach;?>
+							<?endif;?>
+							<span class="mb-0 text-muted date"><?=get_format_date($item['ts'])?></span>
+						</div>
+						<div class="col-4 text-right">
+							<i class="far fa-eye text-muted"></i> <?=$item['counter']?>
+						</div>
+					</div>
+					<h2 class="mb-1 item-title">
+						<a class="text-dark " href="/item/<?=$item['id']?>/"><?=htmlspecialchars_decode($item['name'])?></a>
+					</h2>
+					<p class="card-text mb-auto"><?=htmlspecialchars_decode($item['short_description'])?></p>
+				</div>
+				<a href="/item/<?=$item['id']?>/">
+					<?if(empty($item['img'])):?>
+						<img class="card-img-bottom" src="<?=TEMPLATE_DIR?>/blog_tpl/img/blog-img.svg" alt="<?=htmlspecialchars_decode($item['name'])?>">
+					<?else:?>
+						<img class="card-img-bottom" src="/<?=$item['img']?>" alt="<?=htmlspecialchars_decode($item['name'])?>">
+					<?endif;?>
+				</a>
+			</div>
 		<?endforeach;?>
+
+		<?if($show_more_button):?>
+			<div class="text-center">
+				<button class="btn btn-default" id="blog-list-more" data-count="<?=$items_count?>" data-limit="<?=$filter['limit']?>" data-current="<?=$filter['limit']?>" data-tag="<?=$filter['tag']?>" data-search="<?=$filter['search']?>">Предыдущие публикации</button>
+			</div>
+		<?endif;?>
+
 	<?endif;?>
 </div>
 
-<div class="row blog-list">
-	<div class="col-12">
-		<?if($items):?>
-			<?foreach($items as $item):?>
-				<div class="card flex-md-row mb-4">
-
-					<?if(empty($item['img'])):?>
-						<img class="card-img d-none d-lg-block" src="<?=TEMPLATE_DIR?>/blog_tpl/img/blog-img.svg" alt="<?=htmlspecialchars_decode($item['name'])?>">
-					<?else:?>
-						<img class="card-img d-none d-lg-block" src="/<?=$item['img']?>" alt="<?=htmlspecialchars_decode($item['name'])?>">
-					<?endif;?>
-
-					<div class="card-body d-flex flex-column align-items-start">
-						<?if(($item['tags'] ?? false) && is_array($item['tags'])):?>
-							<div class="tags">
-								<?foreach($item['tags'] as $val):?>
-									<a href="/?tag=<?=$val?>" class="badge badge-primary"><?=$val?></a>
-								<?endforeach;?>
-							</div>
-						<?endif;?>
-						<div class="mb-0 text-muted"><?=get_format_date($item['ts'])?></div>
-						<h3 class="mb-1 item-title">
-							<a class="text-dark" href="/item/<?=$item['id']?>/"><?=htmlspecialchars_decode($item['name'])?></a>
-						</h3>
-						<p class="card-text mb-auto"><?=htmlspecialchars_decode($item['short_description'])?></p>
-						<a href="/item/<?=$item['id']?>/" class="btn btn-primary">Читать</a>
-					</div>
-				</div>
-			<?endforeach;?>
-
-			<?if($show_more_button):?>
-				<div class="text-center">
-					<button class="btn btn-primary" id="blog-list-more" data-count="<?=$items_count?>" data-limit="<?=$items_limit?>" data-current="<?=$items_limit?>" data-tag="<?=$tag?>">Показать еще</button>
-				</div>
-			<?endif;?>
-		<?endif;?>
-	</div>
-</div>
-
 <script type="text/html" id="blog-list-item-tpl">
-	<div class="card flex-md-row mb-4">
-		<img class="card-img d-none d-lg-block" src="{IMG}" alt="{TITLE}">
-		<div class="card-body d-flex flex-column align-items-start">
-			<div class="tags">{TAGS}</div>
-			<div class="mb-0 text-muted">{DATE}</div>
-			<h3 class="mb-1 item-title">
-				<a class="text-dark" href="/item/{ID}/">{TITLE}</a>
-			</h3>
+	<div class="card mb-4">
+		<div class="card-body">
+			<div class="row top-panel">
+				<div class="col-8">
+					{TAGS}
+					<span class="mb-0 text-muted date">{DATE}</span>
+				</div>
+				<div class="col-4 text-right">
+					<i class="far fa-eye text-muted"></i> {COUNTER}
+				</div>
+			</div>
+			<h2 class="mb-1 item-title">
+				<a class="text-dark " href="/item/{ID}/">{TITLE}</a>
+			</h2>
 			<p class="card-text mb-auto">{DESCRIPTION}</p>
-			<a href="/item/{ID}/" class="btn btn-primary">Читать</a>
 		</div>
+		<a href="/item/{ID}/">
+			<img class="card-img-bottom" src="{IMG}" alt="{TITLE}">
+		</a>
 	</div>
 </script>

@@ -107,10 +107,18 @@ class PostModel extends APP_Model
 			$where_sql .= ' AND active = '.intval($filter['active']);
 		}
 
-		if(isset($filter['tag']) && strlen($filter['tag']) >= 3)
+		if(isset($filter['tag']) && mb_strlen($filter['tag']) >= 3)
 		{
 			$bind[] = $filter['tag'];
 			$where_sql .= ' AND FIND_IN_SET(?, tags) ';
+		}
+
+		if(isset($filter['search']) && mb_strlen($filter['search']) >= 3)
+		{
+			$bind[] = '%'.$filter['search'].'%';
+			$bind[] = '%'.$filter['search'].'%';
+			$bind[] = '%'.$filter['search'].'%';
+			$where_sql .= ' AND (name LIKE ? OR short_description LIKE ? OR description LIKE ?) ';
 		}
 
 		if($cnt)
