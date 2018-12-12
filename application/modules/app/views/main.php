@@ -71,6 +71,46 @@
 									</div>
 								</div>
 							</div>
+
+							<div class="card mb-4 popular-posts">
+								<div class="card-body">
+									<h6 class="card-subtitle mb-2 text-muted">Популярное</h6>
+									<div class="card-list">
+										<?if($items_popular):?>
+											<?foreach($items_popular as $val):?>
+												<div class="card">
+													<a href="/item/<?=$val['id']?>/">
+														<?if(!empty($val['img'])):?>
+															<img class="card-img-top" src="/<?=$val['img']?>" alt="<?=htmlspecialchars_decode($val['name'])?>">
+														<?else:?>
+															<img class="card-img-top" src="<?=TEMPLATE_DIR?>/blog_tpl/img/blog-img.svg" alt="<?=htmlspecialchars_decode($val['name'])?>">
+														<?endif;?>
+													</a>
+													<div class="card-body">
+														<div class="row top-panel">
+															<div class="col-6">
+																<span class="mb-0 text-muted date"><?=get_format_date($val['ts'])?></span>
+															</div>
+															<div class="col-6 text-right">
+																<i class="far fa-eye text-muted"></i> <?=$val['counter']?>
+															</div>
+														</div>
+														<h2 class="card-title">
+															<a href="/item/<?=$val['id']?>/"><?=htmlspecialchars_decode($val['name'])?></a>
+														</h2>
+													</div>
+												</div>
+											<?endforeach;?>
+										<?endif;?>
+									</div>
+								</div>
+							</div>
+
+							<div class="card mb-4 block-support">
+								<div class="card-body">
+									<p>По вопросам и предложениям пишите на почту <a href="mailto:support@cgaim.ru">support@cgaim.ru</a></p>
+								</div>
+							</div>
 						</div>
 					</div>
 

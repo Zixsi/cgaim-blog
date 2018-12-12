@@ -59,6 +59,15 @@ a.btn-orange {color: #fff;}
 .blog-other .title {margin-bottom: 20px;}
 .blog-other .card-title {font-size: 18px;}
 
+.popular-posts a {color: #000;}
+.popular-posts .title {margin-bottom: 20px;}
+.popular-posts .card {border: 0 none;}
+.popular-posts .card-list .card-title {font-size: 18px; margin-top: 10px;}
+.popular-posts .card-list .card-body {padding: 1.25rem 0;}
+
+.block-support {font-size: 16px;}
+
+
 .tags-list {}
 .tags-list a {font-weight: normal; display: inline-block; border: 1px solid #343a40; border-radius: 10px; padding: 2px 8px; 
 	font-size: 13px; margin-right: 10px; margin-bottom: 5px;}

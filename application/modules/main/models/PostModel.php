@@ -151,6 +151,17 @@ class PostModel extends APP_Model
 		return false;
 	}
 
+	public function listPopular($cnt = 3)
+	{
+		$sql = 'SELECT id, name, img, ts, counter FROM '.self::TABLE.' WHERE active = 1 ORDER BY counter DESC, ts DESC LIMIT '.$cnt;
+		if($rows = $this->db->query($sql, [])->result_array())
+		{
+			return $rows;
+		}
+
+		return false;
+	}
+
 	public function listOther($rand = false)
 	{
 		$sql = 'SELECT id, name, short_description, img, ts FROM '.self::TABLE.' WHERE active = 1 ORDER BY ';

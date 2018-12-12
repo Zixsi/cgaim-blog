@@ -21,6 +21,7 @@ class Main extends APP_Controller
 		];
 
 		$data['tags'] = $this->TagsModel->list();
+		$data['items_popular'] = $this->PostModel->listPopular(3);
 		$data['items'] = $this->PostModel->list($data['filter']);
 		$data['items_count'] = $this->PostModel->list($data['filter'], true);
 		$data['show_more_button'] = $data['items_count'] > $data['filter']['limit'];
@@ -65,6 +66,7 @@ class Main extends APP_Controller
 		$this->PostModelHelper->counter($id);
 		$data['page_title'] = $data['item']['name'];
 		$data['tags'] = $this->TagsModel->list();
+		$data['items_popular'] = $this->PostModel->listPopular(3);
 		$data['other_items'] = $this->PostModel->listOther(true);
 
 		$this->load->lview('main/item', $data);
