@@ -13,6 +13,9 @@
 		<div id="header">
 			<div class="panel-menu">
 				<div class="container">
+					<a href="/">
+						<img src="<?=TEMPLATE_DIR?>/blog_tpl/img/logo_white.png" class="logo">
+					</a>
 					<ul class="list-unstyled main-menu">
 						<li><a href="#">Главная</a></li>
 						<li><a href="#">Онлайн курсы</a></li>

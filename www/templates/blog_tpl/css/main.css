@@ -19,13 +19,14 @@ a.btn-orange {color: #fff;}
 	/*background: transparent url('../img/bg.jpg') center center repeat-y; background-size: cover; opacity: 0.5;*/}
 #content {position: relative; z-index: 10; width: 100%; height: 100%;}
 
-#header .panel-menu {background-color: #272b30;}
-#header .panel-menu .main-menu {text-align: center;}
+#header .panel-menu {background-color: #272b30; position: relative;}
+#header .panel-menu .main-menu {text-align: center; float: right;}
+#header .panel-menu .logo {height: 60px; width: 150px; margin: 5px 0px 5px 0px;}
 
 #footer {position: absolute; bottom: 0px; width: 100%; box-sizing: border-box; height: 128px; background-color: #272b30; color: #fff; padding-bottom: 25px;}
 #footer .top .main-menu {text-align: center;}
 
-.main-menu {margin-bottom: 0px; text-transform: uppercase; padding: 20px 0px;}
+.main-menu {margin-bottom: 0px; text-transform: uppercase; padding: 24px 0px 25px;}
 .main-menu li {display: inline-block; padding: 0px 10px;}
 .main-menu li > a {color: #fff; text-decoration: none; transition: color 0.4s;}
 .main-menu li > a:hover {color: #ccc; text-decoration: none; transition: color 0.4s;}
@@ -42,14 +43,14 @@ a.btn-orange {color: #fff;}
 
 .blog-list {}
 .blog-list .card-body .top-panel {margin-bottom: 10px;}
-.blog-list .card-body .item-title {font-size: 22px; font-weight: bold;}
-.blog-list .card-body .card-text {font-size: 16px;}
+.blog-list .card-body .item-title {font-size: 20px; font-weight: bold;}
+.blog-list .card-body .card-text {font-size: 14px;}
 .blog-list .card-body .tag {font-weight: normal; display: inline-block; border: 1px solid #343a40; border-radius: 10px; padding: 2px 8px; font-size: 13px;}
 .blog-list .card-body .date {margin-left: 10px;}
 #blog-list-more {background-color: transparent; border-color: #343a40;}
 
 .blog-detail {}
-.blog-detail .item-title {font-size: 22px; font-weight: bold;}
+.blog-detail .item-title {font-size: 20px; font-weight: bold;}
 .blog-detail .card-body .top-panel {margin-bottom: 10px;}
 .blog-detail .card-body .tag {font-weight: normal; display: inline-block; border: 1px solid #343a40; border-radius: 10px; padding: 2px 8px; font-size: 13px;}
 .blog-detail .card-body {padding: 20px 35px;}
@@ -57,12 +58,12 @@ a.btn-orange {color: #fff;}
 
 .blog-other a {color: #000;}
 .blog-other .title {margin-bottom: 20px;}
-.blog-other .card-title {font-size: 18px;}
+.blog-other .card-title {font-size: 16px;}
 
 .popular-posts a {color: #000;}
 .popular-posts .title {margin-bottom: 20px;}
 .popular-posts .card {border: 0 none;}
-.popular-posts .card-list .card-title {font-size: 18px; margin-top: 10px;}
+.popular-posts .card-list .card-title {font-size: 16px; margin-top: 10px;}
 .popular-posts .card-list .card-body {padding: 1.25rem 0;}
 
 .block-support {font-size: 16px;}
