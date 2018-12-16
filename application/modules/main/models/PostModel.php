@@ -4,7 +4,8 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 class PostModel extends APP_Model
 {
 	private const TABLE = 'posts';
-	private const TABLE_FIELDS = ['name', 'short_description', 'description', 'img', 'ts', 'active', 'tags'];
+	private const TABLE_FIELDS = ['name', 'short_description', 'description', 'img', 'ts', 
+	'active', 'tags', 'meta_keywords', 'meta_description'];
 	private $upload_config = null;
 
 	public function __construct()

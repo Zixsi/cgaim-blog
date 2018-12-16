@@ -24,6 +24,14 @@
 					<input type="text" name="name" id="fname" class="form-control" placeholder="Название" value="<?=htmlspecialchars_decode(set_value('name', '', true))?>">
 				</div>
 				<div class="form-group">
+					<label for="fmeta_keywords">Meta Keywords (через ,)</label>
+					<input type="text" name="meta_keywords" id="fmeta_keywords" class="form-control" placeholder="анимация, графика и тд" value="<?=htmlspecialchars_decode(set_value('meta_keywords', '', true))?>">
+				</div>
+				<div class="form-group">
+					<label for="fmeta_description">Meta Description</label>
+					<input type="text" name="meta_description" id="fmeta_description" class="form-control" placeholder="" value="<?=htmlspecialchars_decode(set_value('meta_description', '', true))?>">
+				</div>
+				<div class="form-group">
 					<label>Изображение</label>
 					<input type="file" name="img">
 				</div>

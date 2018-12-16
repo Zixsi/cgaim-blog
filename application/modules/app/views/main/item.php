@@ -34,7 +34,7 @@
 	</div>
 </div>
 
-<div class="blog-other">
+<div class="blog-other d-md-none d-lg-block">
 	<h4 class="title">Другие посты</h4>
 	<div class="card-columns">
 		<?if($other_items):?>

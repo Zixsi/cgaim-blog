@@ -78,3 +78,7 @@ a.btn-orange {color: #fff;}
 #footer .block-contacts ul a:hover  {color: #ccc; text-decoration: none; transition: color 0.4s;}
 #footer .block-owner-info {}
 #footer .block-owner-info > span {display: block;}
+
+@media (max-width: 990px) {
+	.container {max-width: 920px;}
+}

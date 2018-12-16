@@ -1,7 +1,12 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title><?=($page_title = ($page_title ?? ''))?$page_title.' - ':''?>Cgaim Блог</title>
+	<meta charset="UTF-8">
+	<meta name="description" content="<?=($page_description ?? '')?>">
+  	<meta name="keywords" content="<?=($page_keywords ?? '')?>">
+  	<title><?=($page_title = ($page_title ?? ''))?$page_title.' - ':''?>Cgaim Блог</title>
+
+	<link rel="icon" type="image/x-icon" href="/favicon.ico">
 	<link href="https://fonts.googleapis.com/css?family=Roboto:400,400i,700,700i&amp;subset=cyrillic" rel="stylesheet">
 	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" crossorigin="anonymous">
 	<link rel="stylesheet" type="text/css" href="<?=TEMPLATE_DIR?>/blog_tpl/css/bootstrap.min.css">
@@ -31,21 +36,27 @@
 			<div class="page-content">
 				<div class="container">
 
-					<?/*<div class="nav-scroller py-1 mb-2">
-						<nav class="nav d-flex justify-content-center">
-							<?if($tags):?>
-								<?foreach($tags as $val):?>
-									<a href="/?tag=<?=$val['name']?>" class="p-2 text-muted"><?=$val['name']?></a>
-								<?endforeach;?>
-							<?endif;?>
-						</nav>
-					</div>*/?>
-					
 					<div class="row">
-						<div class="col-md-8">
+						<div class="col-md-12 d-none d-md-block d-lg-none">
+							<div class="card mb-4">
+								<div class="card-body">
+									<form action="./" method="get">
+										<div class="input-group">
+											<input type="text" class="form-control" name="q" placeholder="Поиск..." value="<?=($_GET['q'] ?? '')?>">
+											<div class="input-group-append">
+												<button class="btn btn-outline-secondary" type="submit">
+													<i class="fas fa-search"></i>
+												</button>
+											</div>
+										</div>
+									</form>
+								</div>
+							</div>
+						</div>
+						<div class="col-md-12 col-lg-8">
 							<?$this->content()?>
 						</div>
-						<div class="col-md-4">
+						<div class="col-lg-4 d-md-none d-lg-block">
 							<div class="card mb-4">
 								<div class="card-body">
 									<form action="./" method="get">
@@ -150,7 +161,7 @@
 				</div>
 			</div>-->
 			<div class="bottom row">
-				<div class="col-4 block-owner-info">
+				<div class="col-md-8 col-lg-4 block-owner-info">
 					<span>&copy; 2018, ИП Серебряков Александр Сергеевич</span>
 					<span>ИНН 1850210580185011</span>
 				</div>

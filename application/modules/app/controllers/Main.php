@@ -65,6 +65,8 @@ class Main extends APP_Controller
 		$this->load->library(['main/PostModelHelper']);
 		$this->PostModelHelper->counter($id);
 		$data['page_title'] = $data['item']['name'];
+		$data['page_keywords'] = $data['item']['meta_keywords'];
+		$data['page_description'] = $data['item']['meta_description'];
 		$data['tags'] = $this->TagsModel->list();
 		$data['items_popular'] = $this->PostModel->listPopular(3);
 		$data['other_items'] = $this->PostModel->listOther(true);
