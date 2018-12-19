@@ -2,15 +2,24 @@
 <html>
 <head>
 	<meta charset="UTF-8">
-	<meta name="description" content="<?=($page_description ?? '')?>">
-	<meta name="keywords" content="<?=($page_keywords ?? '')?>">
-	<title><?=($page_title = ($page_title ?? ''))?$page_title.' - ':''?>Cgaim Блог</title>
+	<meta name="description" content="<?=($page_description ?? 'Новости и статьи о 3D анимации, 2D анимации, моделировании, maya, zbrush, концепт-арт, разработка игр, спецэффекты и многое другое. Подпишись, чтобы не пропустить самое важное!')?>">
+	<meta name="keywords" content="<?=($page_keywords ?? 'анимация, клуб аниматоров, аниматоры в россии, фриланс, анимационная студия, уроки по анимации, портфолио, персонаж, тайминг, блокинг, короткометражка, фильм, мульт, перекладка, 2D,3D, animator, animations, дорогов, школа анимации, референс, pixar, scream school, animation, blocking, animation mentor, maya, 3d max, key, character, rig, rigging, blender, setup, timing, movie, tooon, cartoon, anime, reference, short, showreel, demoreel, сообщество по анимации ищу аниматора, вакансии, флеш аниматор, работа аниматорам, фриланс, курсы режиссуры, школа анимации, живопись, рисование, мультфильм, Сериал, Буквальные истории, Авторская анимация, Федор Хитрук,wizartschool, wizart, school, wizart animation, школа компьютерной графики, школа кино индустрия, концепт-арт, иллюстрация, 3D моделирование, 3D скульптинг, курсы Zbrush, курсы 3ds max, курсы maya, cg, gamedev, курсы adobe photoshop')?>">
+	<title><?=($page_title = ($page_title ?? ''))?$page_title.' - Cgaim':'Блог о комьютерной графике и анимации'?></title>
 
 	<link rel="icon" type="image/x-icon" href="/favicon.ico">
 	<link href="https://fonts.googleapis.com/css?family=Roboto:400,400i,700,700i&amp;subset=cyrillic" rel="stylesheet">
 	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" crossorigin="anonymous">
 	<link rel="stylesheet" type="text/css" href="<?=TEMPLATE_DIR?>/blog_tpl/css/bootstrap.min.css">
 	<link rel="stylesheet" type="text/css" href="<?=TEMPLATE_DIR?>/blog_tpl/css/main.css?v=<?=VERSION?>">
+	<!-- Global site tag (gtag.js) - Google Analytics -->
+	<script async src="https://www.googletagmanager.com/gtag/js?id=UA-131164595-1"></script>
+	<script>
+		window.dataLayer = window.dataLayer || [];
+		function gtag(){dataLayer.push(arguments);}
+		gtag('js', new Date());
+
+		gtag('config', 'UA-131164595-1');
+	</script>
 </head>
 <body>
 	<div id="background"></div>
@@ -191,14 +200,5 @@
 	</script>
 	<noscript><div><img src="https://mc.yandex.ru/watch/51620483" style="position:absolute; left:-9999px;" alt="" /></div></noscript>
 	<!-- /Yandex.Metrika counter -->
-	<!-- Global site tag (gtag.js) - Google Analytics -->
-	<script async src="https://www.googletagmanager.com/gtag/js?id=UA-131164595-1"></script>
-	<script>
-		window.dataLayer = window.dataLayer || [];
-		function gtag(){dataLayer.push(arguments);}
-		gtag('js', new Date());
-
-		gtag('config', 'UA-131164595-1');
-	</script>
 </body>
 </html>
