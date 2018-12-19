@@ -29,7 +29,11 @@
 
 			<script src="//yastatic.net/es5-shims/0.0.2/es5-shims.min.js"></script>
 			<script src="//yastatic.net/share2/share.js"></script>
-			<div class="ya-share2 text-right" data-services="vkontakte,facebook,odnoklassniki,twitter"></div>
+			<div class="text-right mt-5">
+				<span class="float-left mr-4">Понравился материал? Расскажите о нем друзьям. Спасибо!</span>
+				<div class="ya-share2 text-right float-right" data-services="vkontakte,facebook,odnoklassniki,twitter"></div>
+				<div class="clearfix"></div>
+			</div>
 		</div>
 	</div>
 </div>

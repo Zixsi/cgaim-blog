@@ -52,7 +52,7 @@ function blog_list_more()
 					html = html.replace(/{DESCRIPTION}/g, v.short_description);
 					html = html.replace(/{DATE}/g, v.ts);
 					html = html.replace(/{ID}/g, v.id);
-					html = html.replace(/{COUNTER}/g, v.id);
+					html = html.replace(/{COUNTER}/g, v.counter);
 
 					var tags = '';
 					v.tags.forEach(function(item, i, arr){
