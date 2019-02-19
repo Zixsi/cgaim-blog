@@ -13,3 +13,4 @@ $route['admin/(.*)'] = 'admin/$1';
 
 $route['app/ajax-blog-list'] = 'app/main/ajaxBlogList';
 $route['item/(:num)'] = 'app/main/item/$1';
+$route['blank'] = 'app/main/blank';

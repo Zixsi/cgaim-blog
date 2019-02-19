@@ -74,5 +74,9 @@ class Main extends APP_Controller
 		$this->load->lview('main/item', $data);
 	}
 
-
+	public function blank()
+	{
+		$this->load->layout = 'blank';
+		$this->load->lview('main/blank');
+	}
 }
