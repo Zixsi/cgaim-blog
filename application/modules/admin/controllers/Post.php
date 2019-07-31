@@ -6,7 +6,7 @@ class Post extends APP_Controller
 	public function index()
 	{
 		$data = [];
-		$data['items'] = $this->PostModel->list();
+		$data['items'] = $this->PostModel->list(['limit' => 999]);
 
 		$this->load->lview('post/index', $data);
 	}
