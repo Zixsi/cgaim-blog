@@ -49,11 +49,11 @@
 					</a>
 					<ul class="list-unstyled main-menu">
 						<li><a href="/">Главная</a></li>
-						<li><a href="/blank/">Онлайн курсы</a></li>
 						<li><span class="active">Блог</span></li>
-						<li><a href="/blank/">Отзывы</a></li>
-						<li><a href="/blank/">Контакты</a></li>
-						<li><a href="/blank/">О школе</a></li>
+						<li><a href="http://cgaim.ru/courses/">Онлайн курсы</a></li>
+						<li><a href="http://cgaim.ru/#about">О школе</a></li>
+						<li><a href="http://cgaim.ru/#reviews">Отзывы</a></li>
+						<li><a href="http://cgaim.ru/#contacts">Контакты</a></li>
 					</ul>
 				</div>
 			</div>
@@ -164,11 +164,11 @@
 				<div class="col-12">
 					<ul class="list-unstyled main-menu">
 						<li><a href="/">Главная</a></li>
-						<li><a href="/blank/">Онлайн курсы</a></li>
 						<li><span class="active">Блог</span></li>
-						<li><a href="/blank/">Отзывы</a></li>
-						<li><a href="/blank/">Контакты</a></li>
-						<li><a href="/blank/">О школе</a></li>
+						<li><a href="http://cgaim.ru/courses/">Онлайн курсы</a></li>
+						<li><a href="http://cgaim.ru/#about">О школе</a></li>
+						<li><a href="http://cgaim.ru/#reviews">Отзывы</a></li>
+						<li><a href="http://cgaim.ru/#contacts">Контакты</a></li>
 					</ul>
 				</div>
 			</div>
