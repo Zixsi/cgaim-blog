@@ -48,7 +48,7 @@
 						<img src="<?=TEMPLATE_DIR?>/blog_tpl/img/logo_white.png" class="logo">
 					</a>
 					<ul class="list-unstyled main-menu">
-						<li><a href="/">Главная</a></li>
+						<li><a href="http://cgaim.ru/">Главная</a></li>
 						<li><span class="active">Блог</span></li>
 						<li><a href="http://cgaim.ru/courses/">Онлайн курсы</a></li>
 						<li><a href="http://cgaim.ru/#about">О школе</a></li>
@@ -163,7 +163,7 @@
 			<div class="top row">
 				<div class="col-12">
 					<ul class="list-unstyled main-menu">
-						<li><a href="/">Главная</a></li>
+						<li><a href="http://cgaim.ru/">Главная</a></li>
 						<li><span class="active">Блог</span></li>
 						<li><a href="http://cgaim.ru/courses/">Онлайн курсы</a></li>
 						<li><a href="http://cgaim.ru/#about">О школе</a></li>
@@ -189,7 +189,7 @@
 			<div class="bottom row">
 				<div class="col-md-8 col-lg-4 block-owner-info">
 					<span>&copy; 2018, ИП Серебряков Александр Сергеевич</span>
-					<span>ИНН 1850210580185011</span>
+					<span>ИНН 1850210580185011 Счёт 40802 810 3015 0003 5607 БИК 044525999 Корр. счёт 3010 1810 8452 5000 0999  Филиал Точка Публичного акционерного общества Банка «Финансовая Корпорация Открытие» город Москва </span>
 				</div>
 				<!--
 				<div class="col-4 offset-4 text-right">
