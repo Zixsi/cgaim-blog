@@ -6,7 +6,7 @@
 */
 
 html {position: relative; min-height: 100%;}
-body {font-size: 14px; font-family: 'Roboto',Tahoma; background-color: #f0f0f0; margin-bottom: 128px;}
+body {font-size: 14px; font-family: 'Roboto',Tahoma; background-color: #f0f0f0; margin-bottom: 180px;}
 .btn-orange {background-color: #FD610F; border-color: #FD610F;}
 a.btn-orange {color: #fff;}
 .btn-orange:hover {background-color: #f15d0e; border-color: #f15d0e;}
@@ -23,7 +23,7 @@ a.btn-orange {color: #fff;}
 #header .panel-menu .main-menu {text-align: center; float: right;}
 #header .panel-menu .logo {height: 60px; width: 150px; margin: 5px 0px 5px 0px;}
 
-#footer {position: absolute; bottom: 0px; width: 100%; box-sizing: border-box; height: 128px; background-color: #272b30; color: #fff; padding-bottom: 25px;}
+#footer {position: absolute; bottom: 0px; width: 100%; box-sizing: border-box; height: 180px; background-color: #272b30; color: #fff; padding-bottom: 25px;}
 #footer .top .main-menu {text-align: center;}
 
 .main-menu {margin-bottom: 0px; text-transform: uppercase; padding: 24px 0px 25px;}
