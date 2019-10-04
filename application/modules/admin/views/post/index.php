@@ -14,6 +14,7 @@
 					<th width="100">Id</th>
 					<th width="100">Статус</th>
 					<th>Название</th>
+					<th width="100">Просмотры</th>
 					<th class="text-right">Действие</th>
 				</tr>
 			</thead>
@@ -30,6 +31,7 @@
 								<?endif;?>
 							</td>
 							<td><?=$item['name']?></td>
+							<td class="text-center"><?=(int) ($item['counter'] ?? 0)?></td>
 							<td class="text-right">
 								<a href="./edit/<?=$item['id']?>/" class="btn btn-xxs btn-default lnr lnr-pencil" title="Редактировать"></a>
 								<!--<a href="#" class="btn btn-xxs btn-danger lnr lnr-trash" title="Удалить"></a>-->

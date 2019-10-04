@@ -1,6 +1,37 @@
+var loadingPosts = false;
+
 $(document).ready(function(){
 
 	blog_list_more();
+
+	$('#scroll-up').click(function() {
+		$('html, body').animate({scrollTop: 0},500);
+		return false;
+	})
+
+	$(document).on('scroll', function(){
+		var scrollValue = $(window).scrollTop();
+		var windowHeight = $(window).height();
+		if(scrollValue >= 50)
+			$('#scroll-up').show();
+		else
+			$('#scroll-up').hide();
+
+		
+		if($('#blog-list-more').length > 0)
+		{
+			var markButtonPos = (($('html').height() - $('#blog-list-more').offset().top) + 100);
+			var markPos = ($('html').height() - (windowHeight + markButtonPos));
+
+			if(scrollValue >= markPos && loadingPosts == false)
+			{
+				loadingPosts = true;
+				$('#blog-list-more').click();
+
+				console.log('blog_list_more');
+			}
+		}
+	})
 });
 
 function blog_list_more()
@@ -36,7 +67,7 @@ function blog_list_more()
 				search: search
 			},
 			success: function(data){
-				
+				loadingPosts = false;
 				//console.log('success', data);
 				if(data.items == false)
 				{
@@ -78,6 +109,7 @@ function blog_list_more()
 			},
 			error: function(data){
 				console.log('error', data);
+				loadingPosts = false;
 			}
 		});
 	});

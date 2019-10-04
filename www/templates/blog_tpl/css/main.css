@@ -14,6 +14,8 @@ a.btn-orange {color: #fff;}
 .btn-orange:not(:disabled):not(.disabled):active, 
 .show>.btn-orange.dropdown-toggle {background-color: #f15d0e; border-color: #f15d0e;}
 
+#scroll-up {z-index: 100; position: fixed; right: 20px; bottom: 30px; display: none;}
+
 
 #background {position: fixed; z-index: 0; top: 0px; height: 100%; width: 100%;
 	/*background: transparent url('../img/bg.jpg') center center repeat-y; background-size: cover; opacity: 0.5;*/}

@@ -158,6 +158,7 @@
 			</div>
 		</div>
 	</div>
+	<button type="button" class="btn btn-info" id="scroll-up">Наверх</button>
 	<div id="footer">
 		<div class="container">
 			<div class="top row">
