@@ -1,7 +1,11 @@
+<?php
+$urlSchool = 'http://school.cgaim.ru';
+?>
 <!DOCTYPE html>
 <html>
 <head>
 	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 	<meta name="yandex-verification" content="cc84ea873424a2c2" />
 	<meta name="description" content="<?=($page_description ?? 'Новости и статьи о 3D анимации, 2D анимации, моделировании, maya, zbrush, концепт-арт, разработка игр, спецэффекты и многое другое. Подпишись, чтобы не пропустить самое важное!')?>">
 	<meta name="keywords" content="<?=($page_keywords ?? 'анимация, клуб аниматоров, аниматоры в россии, фриланс, анимационная студия, уроки по анимации, портфолио, персонаж, тайминг, блокинг, короткометражка, фильм, мульт, перекладка, 2D,3D, animator, animations, дорогов, школа анимации, референс, pixar, scream school, animation, blocking, animation mentor, maya, 3d max, key, character, rig, rigging, blender, setup, timing, movie, tooon, cartoon, anime, reference, short, showreel, demoreel, сообщество по анимации ищу аниматора, вакансии, флеш аниматор, работа аниматорам, фриланс, курсы режиссуры, школа анимации, живопись, рисование, мультфильм, Сериал, Буквальные истории, Авторская анимация, Федор Хитрук,wizartschool, wizart, school, wizart animation, школа компьютерной графики, школа кино индустрия, концепт-арт, иллюстрация, 3D моделирование, 3D скульптинг, курсы Zbrush, курсы 3ds max, курсы maya, cg, gamedev, курсы adobe photoshop')?>">
@@ -47,13 +51,19 @@
 					<a href="/">
 						<img src="<?=TEMPLATE_DIR?>/blog_tpl/img/logo_white.png" class="logo">
 					</a>
-					<ul class="list-unstyled main-menu">
+					<a href="<?=$urlSchool?>" class="btn btn-sm btn-orange float-right btn--auth d-none d-lg-block">Вход / Регистрация</a>
+					<label for="main-menu-trigger" id="main-menu-burger" class="d-block d-lg-none">
+						<i class="fas fa-bars"></i>
+					</label>
+					<input type="checkbox" id="main-menu-trigger" value="1">
+					<ul class="list-unstyled main-menu" id="main-menu">
 						<li><a href="http://cgaim.ru/">Главная</a></li>
 						<li><span class="active">Блог</span></li>
 						<li><a href="http://cgaim.ru/courses/">Онлайн курсы</a></li>
 						<li><a href="http://cgaim.ru/#about">О школе</a></li>
 						<li><a href="http://cgaim.ru/#reviews">Отзывы</a></li>
 						<li><a href="http://cgaim.ru/#contacts">Контакты</a></li>
+						<li><a href="<?=$urlSchool?>" class="d-block d-lg-none">Вход / Регистрация</a></li>
 					</ul>
 				</div>
 			</div>
@@ -63,7 +73,7 @@
 				<div class="container">
 
 					<div class="row">
-						<div class="col-md-12 d-none d-md-block d-lg-none">
+						<div class="col-md-12 d-block d-lg-none">
 							<div class="card mb-4">
 								<div class="card-body">
 									<form action="./" method="get">
@@ -82,7 +92,7 @@
 						<div class="col-md-12 col-lg-8">
 							<?$this->content()?>
 						</div>
-						<div class="col-lg-4 d-md-none d-lg-block">
+						<div class="col-lg-4 d-none d-lg-block">
 							<div class="card mb-4">
 								<div class="card-body">
 									<form action="./" method="get">
@@ -158,7 +168,7 @@
 			</div>
 		</div>
 	</div>
-	<button type="button" class="btn btn-info" id="scroll-up">Наверх</button>
+	<button type="button" class="btn btn-info btn-sm" id="scroll-up">Наверх</button>
 	<div id="footer">
 		<div class="container">
 			<div class="top row">
@@ -173,29 +183,11 @@
 					</ul>
 				</div>
 			</div>
-			<!--
-			<div class="middle row">
-				<div class="block-contacts col-4">
-					<div class="title">Свяжитесь с нами:</div>
-					<ul class="list-unstyled">
-						<li><a href="mail:info@kaanima.com">info@kaanima.com</a></li>
-						<li><a href="mail:job@kaanima.com">job@kaanima.com</a></li>
-						<li><a href="mail:game@kaanima.com">game@kaanima.com</a></li>
-					</ul>
-				</div>
-				<div class="block-soc col-3 offset-5">
-					<div class="title">Социальные сети:</div>
-				</div>
-			</div>-->
 			<div class="bottom row">
-				<div class="col-7 block-owner-info">
+				<div class="col-12 col-md-7 block-owner-info">
 					<span>&copy; 2018, ИП Серебряков Александр Сергеевич</span>
 					<span>ИНН 1850210580185011 Счёт 40802 810 3015 0003 5607 БИК 044525999 Корр. счёт 3010 1810 8452 5000 0999  Филиал Точка Публичного акционерного общества Банка «Финансовая Корпорация Открытие» город Москва </span>
 				</div>
-				<!--
-				<div class="col-4 offset-4 text-right">
-					<button type="button" class="btn btn-sm btn-primary">Подписаться на рассылку</button>
-				</div>-->
 			</div>
 		</div>
 	</div>

@@ -24,6 +24,10 @@ a.btn-orange {color: #fff;}
 #header .panel-menu {background-color: #272b30; position: relative;}
 #header .panel-menu .main-menu {text-align: center; float: right;}
 #header .panel-menu .logo {height: 60px; width: 150px; margin: 5px 0px 5px 0px;}
+#header .panel-menu .btn--auth {margin-top: 18px;}
+
+#main-menu-burger {color: #ffffff; font-size: 30px; cursor: pointer; margin-bottom: 0px; float: right; margin-top: 15px;}
+#main-menu-trigger {width: 1px; height: 1px; position: absolute; left: -9999px; opacity: 0;}
 
 #footer {position: absolute; bottom: 0px; width: 100%; box-sizing: border-box; height: 180px; background-color: #272b30; color: #fff; padding-bottom: 25px;}
 #footer .top .main-menu {text-align: center;}
@@ -48,7 +52,6 @@ a.btn-orange {color: #fff;}
 .blog-list .card-body .item-title {font-size: 20px; font-weight: bold;}
 .blog-list .card-body .card-text {font-size: 14px;}
 .blog-list .card-body .tag {font-weight: normal; display: inline-block; border: 1px solid #343a40; border-radius: 10px; padding: 2px 8px; font-size: 13px;}
-.blog-list .card-body .date {margin-left: 10px;}
 #blog-list-more {background-color: transparent; border-color: #343a40;}
 
 .blog-detail {}
@@ -81,6 +84,32 @@ a.btn-orange {color: #fff;}
 #footer .block-owner-info {}
 #footer .block-owner-info > span {display: block;}
 
-@media (max-width: 990px) {
-	.container {max-width: 920px;}
+@media (max-width: 991px) {
+	#main-menu .container {position: relative;}
+	#main-menu {display: none; position: absolute; top: 70px; right: 0px; background-color: #424955; width: 100%; margin-right: 0px !important; z-index: 20; padding: 0px;}
+	#main-menu li {display: block; font-size: 18px; margin: 13px 20px;}
+	#main-menu-trigger:checked + #main-menu {display: block !important;}
+}
+
+@media (max-width: 768px) {
+	
+}
+
+@media (max-width: 767px) {
+	body {margin-bottom: 250px;}
+	#footer {height: 250px;}
+	#footer .top .main-menu {padding-bottom: 10px;}
+}
+
+@media (max-width: 575px) {
+	#header .panel-menu .logo {width: 130px; height: 52px;}
+	#main-menu-burger {margin-top: 10px;}
+	#main-menu {top: 62px;}
+	.blog-list .card-body .item-title {font-size: 16px;}
+	.blog-detail .item-title {font-size: 16px;}
+}
+
+@media (max-width: 400px) {
+	body {margin-bottom: 300px;}
+	#footer {height: 300px;}
 }

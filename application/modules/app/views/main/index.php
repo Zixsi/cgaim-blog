@@ -9,8 +9,9 @@
 								<?foreach($item['tags'] as $val):?>
 									<a href="/?tag=<?=$val?>" class="text-dark tag"><?=$val?></a>
 								<?endforeach;?>
+								<div class="w-100 d-md-none mt-1"></div>
 							<?endif;?>
-							<span class="mb-0 text-muted date"><?=get_format_date($item['ts'])?></span>
+							<span class="mb-0 ml-1 text-muted date"><?=get_format_date($item['ts'])?></span>
 						</div>
 						<div class="col-4 text-right">
 							<i class="far fa-eye text-muted"></i> <?=$item['counter']?>
