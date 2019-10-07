@@ -89,9 +89,27 @@ $urlSchool = 'http://school.cgaim.ru';
 								</div>
 							</div>
 						</div>
+
+						<div class="col-md-12 d-block d-lg-none">
+							<div class="card mb-4">
+								<div class="card-body">
+									<h6 class="card-subtitle mb-2 text-muted">Теги</h6>
+									<div class="tags-list">
+										<a href="/" class="text-dark">Все публикации</a>
+										<?if($tags):?>
+											<?foreach($tags as $val):?>
+												<a href="/?tag=<?=$val['name']?>" class="text-dark"><?=$val['name']?></a>
+											<?endforeach;?>
+										<?endif;?>
+									</div>
+								</div>
+							</div>
+						</div>
+
 						<div class="col-md-12 col-lg-8">
 							<?$this->content()?>
 						</div>
+
 						<div class="col-lg-4 d-none d-lg-block">
 							<div class="card mb-4">
 								<div class="card-body">
@@ -158,7 +176,7 @@ $urlSchool = 'http://school.cgaim.ru';
 
 							<div class="card mb-4 block-support">
 								<div class="card-body">
-									<p>По вопросам и предложениям пишите на почту <a href="mailto:support@cgaim.ru">support@cgaim.ru</a></p>
+									<p>По вопросам и предложениям пишите на почту <a href="mailto:info@cgaim.ru">info@cgaim.ru</a></p>
 								</div>
 							</div>
 						</div>

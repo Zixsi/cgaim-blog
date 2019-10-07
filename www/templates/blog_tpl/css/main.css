@@ -61,6 +61,8 @@ a.btn-orange {color: #fff;}
 .blog-detail .card-body {padding: 20px 35px;}
 .blog-detail .card-body img {width: 100%; height: auto; margin: 15px 0px;}
 
+.blog-detail .btn-outline-dark:hover {background-color: transparent; color: #000; text-decoration: underline;}
+
 .blog-other a {color: #000;}
 .blog-other .title {margin-bottom: 20px;}
 .blog-other .card-title {font-size: 16px;}
