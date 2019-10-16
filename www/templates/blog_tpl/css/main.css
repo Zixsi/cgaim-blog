@@ -6,7 +6,7 @@
 */
 
 html {position: relative; min-height: 100%;}
-body {font-size: 14px; font-family: 'Roboto',Tahoma; background-color: #f0f0f0; margin-bottom: 180px;}
+body {font-size: 14px; font-family: 'Roboto',Tahoma; background-color: #f0f0f0; margin-bottom: 200px;}
 .btn-orange {background-color: #FD610F; border-color: #FD610F;}
 a.btn-orange {color: #fff;}
 .btn-orange:hover {background-color: #f15d0e; border-color: #f15d0e;}
@@ -29,8 +29,15 @@ a.btn-orange {color: #fff;}
 #main-menu-burger {color: #ffffff; font-size: 30px; cursor: pointer; margin-bottom: 0px; float: right; margin-top: 15px;}
 #main-menu-trigger {width: 1px; height: 1px; position: absolute; left: -9999px; opacity: 0;}
 
-#footer {position: absolute; bottom: 0px; width: 100%; box-sizing: border-box; height: 180px; background-color: #272b30; color: #fff; padding-bottom: 25px;}
+#footer {position: absolute; bottom: 0px; width: 100%; box-sizing: border-box; height: 200px; background-color: #272b30; color: #fff; padding-bottom: 25px;}
 #footer .top .main-menu {text-align: center;}
+
+#footer .soc-block {display: flex; justify-content: flex-end;}
+#footer .soc-block > span {margin-top: 4px;}
+#footer .soc-block a {color: #FD610F; font-size: 20px; display: inline-block; width: 30px; height: 30px; display: flex; align-items: center; justify-content: center; border: 1px solid #FD610F; border-radius: 3px; margin-left: 5px;}
+#footer .soc-block a:hover {text-decoration: none;}
+
+#footer .contacts a {color: #FD610F;}
 
 .main-menu {margin-bottom: 0px; text-transform: uppercase; padding: 24px 0px 25px;}
 .main-menu li {display: inline-block; padding: 0px 10px;}
@@ -98,9 +105,12 @@ a.btn-orange {color: #fff;}
 }
 
 @media (max-width: 767px) {
-	body {margin-bottom: 250px;}
-	#footer {height: 250px;}
+	body {margin-bottom: 300px;}
+	#footer {height: 300px;}
 	#footer .top .main-menu {padding-bottom: 10px;}
+
+	#footer .soc-block {justify-content: center;}
+	#footer .contacts {text-align: center;}
 }
 
 @media (max-width: 575px) {
@@ -112,6 +122,6 @@ a.btn-orange {color: #fff;}
 }
 
 @media (max-width: 400px) {
-	body {margin-bottom: 300px;}
-	#footer {height: 300px;}
+	body {margin-bottom: 380px;}
+	#footer {height: 380px;}
 }

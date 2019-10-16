@@ -202,9 +202,18 @@ $urlSchool = 'http://school.cgaim.ru';
 				</div>
 			</div>
 			<div class="bottom row">
-				<div class="col-12 col-md-7 block-owner-info">
+				<div class="col-12 col-md-7 order-2 order-md-1 block-owner-info">
 					<span>&copy; 2018, ИП Серебряков Александр Сергеевич</span>
-					<span>ИНН 1850210580185011 Счёт 40802 810 3015 0003 5607 БИК 044525999 Корр. счёт 3010 1810 8452 5000 0999  Филиал Точка Публичного акционерного общества Банка «Финансовая Корпорация Открытие» город Москва </span>
+					<span>ИНН 344112777283 Счёт 40802 810 3015 0003 5607 БИК 044525999 Корр. счёт 3010 1810 8452 5000 0999  Филиал Точка Публичного акционерного общества Банка «Финансовая Корпорация Открытие» город Москва </span>
+				</div>
+				<div class="col-12 col-md-5 order-1 order-md-2 mb-2 mb-md-0 text-right">
+					<div class="contacts pt-2">По всем вопросам:&nbsp;<a href="mailto:info@cgaim.ru">info@cgaim.ru</a></div>
+					<div class="soc-block pt-2">
+						<span>Мы в соц. сетях:</span>
+						<a href="https://cutt.ly/ZeuSQfS" target="_blank"><i class="fab fa-youtube"></i></a>
+						<a href="https://vk.com/cgaim" target="_blank"><i class="fab fa-vk"></i></a>
+						<a href="https://www.instagram.com/cgaim_school/" target="_blank"><i class="fab fa-instagram"></i></a>
+					</div>
 				</div>
 			</div>
 		</div>
