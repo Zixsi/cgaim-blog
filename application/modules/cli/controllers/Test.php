@@ -5,7 +5,7 @@ class Test extends APP_Controller
 {
 	public function __construct()
 	{
-		$this->load->library(['ydvideo']);
+		
 	}
 
 	// php index.php cli test index 1 qwerty
