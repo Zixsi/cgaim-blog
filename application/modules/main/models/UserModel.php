@@ -30,6 +30,10 @@ class UserModel extends APP_Model
 
 	public function update($id, $data = [])
 	{
+		$this->db->where('id', $id);
+		if($this->db->update(self::TABLE, $data))
+			return true;
+
 		return false;
 	}
 
